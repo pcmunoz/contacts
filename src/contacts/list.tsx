@@ -14,9 +14,10 @@ export interface Props {
     sortContacts: (sort: "asc" | "desc", field: string) => void;
     sort: Sort;
     setSort: (sort: Sort) => void;
+    toggleModal: () => void;
 }
 
-const ContactList = ({contacts, deleteContact, editContact, sortContacts, sort, setSort}:Props) => {
+const ContactList = ({contacts, deleteContact, editContact, sortContacts, sort, setSort,toggleModal}:Props) => {
   const SortColumn = (field: string) => {
     const asc = 
       <FaSortUp onClick={()=>{
@@ -61,7 +62,7 @@ const ContactList = ({contacts, deleteContact, editContact, sortContacts, sort, 
                     <td>{contact.email}</td>
                     <td>{contact.contactNumber}</td>
                     <td>
-                    <button className="button muted-button" onClick={() => {editContact(contact)}}>Edit</button>
+                    <button className="button muted-button" onClick={() => {editContact(contact); toggleModal();}}>Edit</button>
                     <button className="button muted-button" onClick={() => {deleteContact(contact.id)}}>Delete</button>
                     </td>
                 </tr>

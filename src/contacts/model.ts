@@ -6,5 +6,5 @@ export interface Contact {
 }
 
 export const initialState: Contact = {
-    name: '', email: '', contactNumber: '' 
+    id: 0, name: '', email: '', contactNumber: '' 
 }

@@ -2,10 +2,23 @@ import React, { useState } from 'react';
 import { orderBy } from 'lodash';
 import './primitive.css';
 import ContactList from './contacts/list';
-import AddContact from './contacts/add';
-import EditContact from './contacts/edit';
+import FormContact from './contacts/form';
 import { Contact, initialState } from './contacts/model';
+import Modal from 'react-modal';
 
+Modal.setAppElement('#root');
+
+const customStyles = {
+  content : {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: '500px'
+  }
+};
 interface Sort {
   type: "asc" | "desc";
   field: string;
@@ -20,6 +33,7 @@ const App: React.FC = () => {
 
   const [contacts, setContacts] = useState(data);
   const [sort, setSort] = useState<Sort>({ type: "asc", field: "name"});
+  const [showModal, setShowModal] = useState(false);
 
   const addContact = (contact: Contact) => {
     contact.id = contacts.length + 1;
@@ -35,44 +49,43 @@ const App: React.FC = () => {
     setContacts(sortedContacts)
   }
 
-  const [editing, setEditing] = useState(false);
-
   const [currentContact, setCurrentContact] = useState(initialState)
 
   const editContact = (contact:Contact) => {
-    setEditing(true)
-  
     setCurrentContact(contact)
   }
   
   const updateContact = (id:number, updatedContact: Contact) => {
-    setEditing(false)
-  
     setContacts(contacts.map(contact => (contact.id === id ? updatedContact : contact)))
   }
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  }
+
+  const mode = currentContact.id===0 ? 'Add Contact' : 'Edit Contact';
 
   return (
     <div className="container">
       <h1>Contacts</h1>
       <div className="flex-row">
-        {editing ? (
-          <div className="flex-large">
-            <h2>Edit Contact</h2>
-            <EditContact
-              editing={editing}
-              setEditing={setEditing}
+        <Modal 
+           isOpen={showModal}
+           style={customStyles}
+           contentLabel={mode}
+        >
+            <h2>{mode}</h2>
+            <FormContact
               currentContact={currentContact}
-              updateContact={updateContact}
+              addContact={addContact}
+              updateContact={updateContact} 
+              toggleModal={toggleModal}
+              mode={mode}
             />
-          </div>
-        ) : (
-          <div className="flex-large">
-            <h2>Add Contact</h2>
-            <AddContact addContact={addContact} />
-          </div>
-        )}
+        </Modal>
         <div className="flex-large">
           <h2>View Contacts</h2>
+          <button onClick={()=>{editContact(initialState);toggleModal()}}>Add Contact</button>
           <ContactList 
             contacts={contacts}
             sortContacts={sortContacts}
@@ -80,6 +93,7 @@ const App: React.FC = () => {
             deleteContact={deleteContact}
             sort={sort}
             setSort={setSort}
+            toggleModal={toggleModal}
           />
         </div>
       </div>
