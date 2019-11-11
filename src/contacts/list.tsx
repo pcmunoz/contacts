@@ -7,8 +7,16 @@ interface Sort {
   field: string;
 }
 
+interface Meta {
+  currentPage: number;
+  perPage: number;
+  pageNumbers: number[];
+}
+
 export interface Props {
     contacts: Contact[];
+    meta: Meta;
+    setMeta: (meta:Meta) => void;
     deleteContact: (id?:number) => void;
     editContact: (contact:Contact) => void;
     sortContacts: (sort: "asc" | "desc", field: string) => void;
@@ -17,7 +25,7 @@ export interface Props {
     toggleModal: () => void;
 }
 
-const ContactList = ({contacts, deleteContact, editContact, sortContacts, sort, setSort,toggleModal}:Props) => {
+const ContactList = ({contacts, meta, setMeta, deleteContact, editContact, sortContacts, sort, setSort,toggleModal}:Props) => {
   const SortColumn = (field: string) => {
     const asc = 
       <FaSortUp onClick={()=>{
@@ -37,6 +45,18 @@ const ContactList = ({contacts, deleteContact, editContact, sortContacts, sort, 
       field === sort.field ? individualSort : AllSort
     )
   }
+  
+
+  const renderPageNumbers = meta.pageNumbers.map(number => {
+    return (
+      <span
+        key={number}
+        onClick={()=>{setMeta({...meta, currentPage: number})}}
+      >
+        {number}
+      </span>
+    );
+  });
 
   return (
     <>
@@ -73,6 +93,7 @@ const ContactList = ({contacts, deleteContact, editContact, sortContacts, sort, 
                 </tr>
             )}
         </tbody>
+        <tfoot><tr><th>{renderPageNumbers}</th></tr></tfoot>
       </table>
     </>
   )

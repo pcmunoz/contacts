@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { orderBy } from 'lodash';
 import './primitive.css';
 import ContactList from './contacts/list';
@@ -24,15 +24,40 @@ interface Sort {
   field: string;
 }
 
+interface Meta {
+  currentPage: number;
+  perPage: number;
+  pageNumbers: number[];
+}
+
+const initialMetaState = (contacts: Contact[]) => {
+  const perPage = 5;
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(contacts.length / perPage); i++) {
+    pageNumbers.push(i);
+  }
+  return {
+    currentPage: 1,
+    perPage,
+    pageNumbers
+  }
+}
+
 const App: React.FC = () => {
   const data: Contact[] = [
     { id: 1, name: 'Tania', email: 'tania@mail.com', contactNumber: '123123123' },
     { id: 2, name: 'Craig', email: 'craig@email.com', contactNumber: '6546456' },
-    { id: 3, name: 'Ben', email: 'ben@email.com', contactNumber: '234234' },
+    { id: 3, name: 'Ben1', email: 'ben1@email.com', contactNumber: '2342134' },
+    { id: 4, name: 'Ben2', email: 'ben2@email.com', contactNumber: '2342234' },
+    { id: 5, name: 'Ben3', email: 'ben3@email.com', contactNumber: '2342334' },
+    { id: 6, name: 'Ben4', email: 'ben4@email.com', contactNumber: '2342434' },
+    { id: 7, name: 'Ben5', email: 'ben5@email.com', contactNumber: '23425 34' },
   ]
 
   const [contacts, setContacts] = useState(data);
+  const [list, setList] = useState(data);
   const [sort, setSort] = useState<Sort>({ type: "asc", field: "name"});
+  const [meta, setMeta] = useState<Meta>(initialMetaState(contacts))
   const [showModal, setShowModal] = useState(false);
 
   const addContact = (contact: Contact) => {
@@ -65,6 +90,16 @@ const App: React.FC = () => {
 
   const mode = currentContact.id===0 ? 'Add Contact' : 'Edit Contact';
 
+  useEffect(()=>{
+    const metaPage = (meta.currentPage * meta.perPage);
+    const indexOfLast = metaPage < contacts.length ? meta.currentPage * meta.perPage : contacts.length;
+    const lastPage = meta.pageNumbers[meta.pageNumbers.length - 1]
+    const indexOfFirst = meta.currentPage === lastPage ? contacts.length - (metaPage - contacts.length - 1) : indexOfLast - meta.perPage;
+    console.log(indexOfFirst)
+    console.log(indexOfLast)
+    setList(contacts.slice(indexOfFirst,indexOfLast))
+  },[meta, contacts]);
+
   return (
     <div className="container">
       <h1>Contacts</h1>
@@ -87,7 +122,9 @@ const App: React.FC = () => {
           <h2>View Contacts</h2>
           <button onClick={()=>{editContact(initialState);toggleModal()}}>Add Contact</button>
           <ContactList 
-            contacts={contacts}
+            contacts={list}
+            meta={meta}
+            setMeta={setMeta}
             sortContacts={sortContacts}
             editContact={editContact}
             deleteContact={deleteContact}
