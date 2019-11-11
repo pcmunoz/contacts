@@ -30,17 +30,24 @@ interface Meta {
   pageNumbers: number[];
 }
 
-const initialMetaState = (contacts: Contact[]) => {
-  const perPage = 5;
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(contacts.length / perPage); i++) {
-    pageNumbers.push(i);
-  }
+const PER_PAGE = 5;
+
+const initialMetaState = (length:number) => {
+  const perPage = PER_PAGE;
+  const pageNumbers = calculatePageNumbers(length);
   return {
     currentPage: 1,
     perPage,
     pageNumbers
   }
+}
+
+const calculatePageNumbers = (length:number) => {
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(length / PER_PAGE); i++) {
+    pageNumbers.push(i);
+  }
+  return pageNumbers;
 }
 
 const App: React.FC = () => {
@@ -57,7 +64,7 @@ const App: React.FC = () => {
   const [contacts, setContacts] = useState(data);
   const [list, setList] = useState(data);
   const [sort, setSort] = useState<Sort>({ type: "asc", field: "name"});
-  const [meta, setMeta] = useState<Meta>(initialMetaState(contacts))
+  const [meta, setMeta] = useState<Meta>(initialMetaState(contacts.length));
   const [showModal, setShowModal] = useState(false);
 
   const addContact = (contact: Contact) => {
@@ -89,14 +96,21 @@ const App: React.FC = () => {
   }
 
   const mode = currentContact.id===0 ? 'Add Contact' : 'Edit Contact';
+  useEffect(()=>{
+    const pageNumbers = calculatePageNumbers(contacts.length);
+    let currentPage = meta.currentPage;
+    if(pageNumbers[pageNumbers.length - 1] < meta.currentPage){
+      currentPage = pageNumbers[pageNumbers.length - 1];
+    }
+    setMeta({perPage: PER_PAGE, currentPage, pageNumbers})
+  }, [contacts.length,meta.currentPage]);
 
   useEffect(()=>{
     const metaPage = (meta.currentPage * meta.perPage);
+    const beforePage = ((meta.currentPage - 1) * meta.perPage);
     const indexOfLast = metaPage < contacts.length ? meta.currentPage * meta.perPage : contacts.length;
     const lastPage = meta.pageNumbers[meta.pageNumbers.length - 1]
-    const indexOfFirst = meta.currentPage === lastPage ? contacts.length - (metaPage - contacts.length - 1) : indexOfLast - meta.perPage;
-    console.log(indexOfFirst)
-    console.log(indexOfLast)
+    const indexOfFirst = meta.currentPage === lastPage ? contacts.length - (contacts.length - beforePage) : indexOfLast - meta.perPage;
     setList(contacts.slice(indexOfFirst,indexOfLast))
   },[meta, contacts]);
 
