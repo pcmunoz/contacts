@@ -1,19 +1,16 @@
 const { dependencies } = require('./package.json');
 
 module.exports = {
-  name: 'remote',
-  filename: 'remoteEntry.js',
+  name: 'contacts',
   exposes: {
-    './Contacts': './src/index.tsx',
+    './Contacts': './src/index',
   },
-  remotes: {},
+  filename: 'remoteEntry.js',
   shared: {
     ...dependencies,
     react: {
       singleton: true,
-      import: 'react',
-      shareScope: 'default',
-      requiredVersion: dependencies.react,
+      requiredVersion: dependencies['react'],
     },
     'react-dom': {
       singleton: true,

@@ -13,27 +13,26 @@
     "react-icons": "^4.0.0",
     "react-modal": "^3.16.1",
     "react-scripts": "5.0.1",
-    "typescript": "3.7.2"
+    "typescript": "4.1.6"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@craco/craco": "^7.1.0",
     "@types/lodash": "^4.14.195",
     "@types/node": "20.3.1",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.0",
     "@types/react-modal": "^3.16.0",
-    "craco-mf": "^1.0.0",
     "gh-pages": "3.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "craco start",
     "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build:rs": "react-scripts build",
-    "craco:start": "craco start"
+    "build:rs": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"

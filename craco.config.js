@@ -1,9 +1,11 @@
-const cracoModuleFederation = require('craco-mf');
-
 module.exports = {
     plugins: [{
-        plugin: cracoModuleFederation,
-        options: { useNamedChunkIds:true } // THIS LINE IS OPTIONAL
-      },
-    ]
-}
+            plugin: require("./craco-plugins/module-federation")
+        }
+    ],
+    webpack: {
+        plugins: {
+            remove: ["ModuleScopePlugin"],
+        },
+    },
+};
