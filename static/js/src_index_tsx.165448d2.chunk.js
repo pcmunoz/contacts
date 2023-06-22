@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcontacts=self.webpackChunkcontacts||[]).push([["src_index_tsx"],{672:function(e,s,t){t.r(s),t.d(s,{dummy:function(){return _}}),Promise.all([t.e("vendors-node_modules_react-dom_client_js-node_modules_react-icons_fa_index_esm_js-node_module-76a654"),t.e("webpack_sharing_consume_default_react_react"),t.e("webpack_sharing_consume_default_react-dom_react-dom"),t.e("src_bootstrap_tsx")]).then(t.bind(t,926));var _="to fix isolatedModules issue"}}]);
-//# sourceMappingURL=src_index_tsx.165448d2.chunk.js.map

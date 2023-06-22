@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/src_index_tsx.165448d2.chunk.js","mappings":"+JAAA,sRAEO,IAAMA,EAAQ,8B","sources":["index.tsx"],"sourcesContent":["import(\"./bootstrap\");\r\n\r\nexport const dummy = \"to fix isolatedModules issue\";\r\n"],"names":["dummy"],"sourceRoot":""}
