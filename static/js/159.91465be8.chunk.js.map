@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/159.91465be8.chunk.js","mappings":"mJAAA,sEAEO,IAAMA,EAAQ,8B","sources":["index.ts"],"sourcesContent":["import(\"./bootstrap\");\r\n\r\nexport const dummy = \"to fix isolatedModules issue\";\r\n"],"names":["dummy"],"sourceRoot":""}
