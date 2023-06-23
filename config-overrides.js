@@ -30,7 +30,6 @@ module.exports = function (config, env) {
       })
     )
   );
-  config.output.publicPath = "auto";
   return Object.assign(
     config,
     override(
