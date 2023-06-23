@@ -1,7 +1,7 @@
 {
   "files": {
     "main.js": "/contacts/static/js/main.49c5fb14.js",
-    "remote.js": "/contacts/remoteEntry.js",
+    "contact.js": "/contacts/remoteEntry.js",
     "static/css/693.20a01f4d.chunk.css": "/contacts/static/css/693.20a01f4d.chunk.css",
     "static/js/693.3d5a1886.chunk.js": "/contacts/static/js/693.3d5a1886.chunk.js",
     "static/js/763.22e0e5ac.chunk.js": "/contacts/static/js/763.22e0e5ac.chunk.js",
