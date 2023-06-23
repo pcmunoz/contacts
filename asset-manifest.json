@@ -1,30 +1,16 @@
 {
   "files": {
-    "main.js": "/contacts/static/js/main.94b6fb53.js",
-    "contacts.js": "/contacts/remoteEntry.js",
-    "static/css/src_bootstrap_tsx.f38c28e6.chunk.css": "/contacts/static/css/src_bootstrap_tsx.f38c28e6.chunk.css",
-    "static/js/src_bootstrap_tsx.c52b304e.chunk.js": "/contacts/static/js/src_bootstrap_tsx.c52b304e.chunk.js",
-    "static/js/vendors-node_modules_lodash_lodash_js.378bec08.chunk.js": "/contacts/static/js/vendors-node_modules_lodash_lodash_js.378bec08.chunk.js",
-    "static/js/node_modules_react_index_js.ee484383.chunk.js": "/contacts/static/js/node_modules_react_index_js.ee484383.chunk.js",
-    "static/css/src_component_Contact_tsx.7d38f9e3.chunk.css": "/contacts/static/css/src_component_Contact_tsx.7d38f9e3.chunk.css",
-    "static/js/src_component_Contact_tsx.4d644111.chunk.js": "/contacts/static/js/src_component_Contact_tsx.4d644111.chunk.js",
-    "static/js/vendors-node_modules_react-dom_index_js.1f4f93d8.chunk.js": "/contacts/static/js/vendors-node_modules_react-dom_index_js.1f4f93d8.chunk.js",
-    "static/js/vendors-node_modules_react-icons_fa_index_esm_js-node_modules_react_jsx-runtime_js-node_modul-02b71a.1d937e61.chunk.js": "/contacts/static/js/vendors-node_modules_react-icons_fa_index_esm_js-node_modules_react_jsx-runtime_js-node_modul-02b71a.1d937e61.chunk.js",
-    "static/js/vendors-node_modules_react-modal_lib_index_js.f32bfd77.chunk.js": "/contacts/static/js/vendors-node_modules_react-modal_lib_index_js.f32bfd77.chunk.js",
+    "main.js": "/contacts/static/js/main.b782b266.js",
+    "static/css/693.20a01f4d.chunk.css": "/contacts/static/css/693.20a01f4d.chunk.css",
+    "static/js/693.560431b4.chunk.js": "/contacts/static/js/693.560431b4.chunk.js",
+    "static/js/110.1ba1bf3d.chunk.js": "/contacts/static/js/110.1ba1bf3d.chunk.js",
     "index.html": "/contacts/index.html",
-    "main.94b6fb53.js.map": "/contacts/static/js/main.94b6fb53.js.map",
-    "remoteEntry.js.map": "/contacts/remoteEntry.js.map",
-    "src_bootstrap_tsx.f38c28e6.chunk.css.map": "/contacts/static/css/src_bootstrap_tsx.f38c28e6.chunk.css.map",
-    "src_bootstrap_tsx.c52b304e.chunk.js.map": "/contacts/static/js/src_bootstrap_tsx.c52b304e.chunk.js.map",
-    "vendors-node_modules_lodash_lodash_js.378bec08.chunk.js.map": "/contacts/static/js/vendors-node_modules_lodash_lodash_js.378bec08.chunk.js.map",
-    "node_modules_react_index_js.ee484383.chunk.js.map": "/contacts/static/js/node_modules_react_index_js.ee484383.chunk.js.map",
-    "src_component_Contact_tsx.7d38f9e3.chunk.css.map": "/contacts/static/css/src_component_Contact_tsx.7d38f9e3.chunk.css.map",
-    "src_component_Contact_tsx.4d644111.chunk.js.map": "/contacts/static/js/src_component_Contact_tsx.4d644111.chunk.js.map",
-    "vendors-node_modules_react-dom_index_js.1f4f93d8.chunk.js.map": "/contacts/static/js/vendors-node_modules_react-dom_index_js.1f4f93d8.chunk.js.map",
-    "vendors-node_modules_react-icons_fa_index_esm_js-node_modules_react_jsx-runtime_js-node_modul-02b71a.1d937e61.chunk.js.map": "/contacts/static/js/vendors-node_modules_react-icons_fa_index_esm_js-node_modules_react_jsx-runtime_js-node_modul-02b71a.1d937e61.chunk.js.map",
-    "vendors-node_modules_react-modal_lib_index_js.f32bfd77.chunk.js.map": "/contacts/static/js/vendors-node_modules_react-modal_lib_index_js.f32bfd77.chunk.js.map"
+    "main.b782b266.js.map": "/contacts/static/js/main.b782b266.js.map",
+    "693.20a01f4d.chunk.css.map": "/contacts/static/css/693.20a01f4d.chunk.css.map",
+    "693.560431b4.chunk.js.map": "/contacts/static/js/693.560431b4.chunk.js.map",
+    "110.1ba1bf3d.chunk.js.map": "/contacts/static/js/110.1ba1bf3d.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.94b6fb53.js"
+    "static/js/main.b782b266.js"
   ]
 }
