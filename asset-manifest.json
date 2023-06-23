@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.js": "/contacts/static/js/main.fd7cd3d2.js",
+    "main.js": "/contacts/static/js/main.602c58ff.js",
     "remote.js": "/contacts/remoteEntry.js",
-    "static/css/693.20a01f4d.chunk.css": "/contacts/static/css/693.20a01f4d.chunk.css",
+    "static/css/693.141688da.chunk.css": "/contacts/static/css/693.141688da.chunk.css",
     "static/js/693.3d5a1886.chunk.js": "/contacts/static/js/693.3d5a1886.chunk.js",
     "static/js/763.22e0e5ac.chunk.js": "/contacts/static/js/763.22e0e5ac.chunk.js",
     "static/js/791.d247f84f.chunk.js": "/contacts/static/js/791.d247f84f.chunk.js",
-    "static/css/551.cadb8ca9.chunk.css": "/contacts/static/css/551.cadb8ca9.chunk.css",
+    "static/css/551.0cdfdcc2.chunk.css": "/contacts/static/css/551.0cdfdcc2.chunk.css",
     "static/js/551.57fa3613.chunk.js": "/contacts/static/js/551.57fa3613.chunk.js",
     "static/js/164.6fb95108.chunk.js": "/contacts/static/js/164.6fb95108.chunk.js",
     "static/js/160.87a50221.chunk.js": "/contacts/static/js/160.87a50221.chunk.js",
     "static/js/948.5bf864af.chunk.js": "/contacts/static/js/948.5bf864af.chunk.js",
     "index.html": "/contacts/index.html",
-    "main.fd7cd3d2.js.map": "/contacts/static/js/main.fd7cd3d2.js.map",
+    "main.602c58ff.js.map": "/contacts/static/js/main.602c58ff.js.map",
     "remoteEntry.js.map": "/contacts/remoteEntry.js.map",
-    "693.20a01f4d.chunk.css.map": "/contacts/static/css/693.20a01f4d.chunk.css.map",
+    "693.141688da.chunk.css.map": "/contacts/static/css/693.141688da.chunk.css.map",
     "693.3d5a1886.chunk.js.map": "/contacts/static/js/693.3d5a1886.chunk.js.map",
     "763.22e0e5ac.chunk.js.map": "/contacts/static/js/763.22e0e5ac.chunk.js.map",
     "791.d247f84f.chunk.js.map": "/contacts/static/js/791.d247f84f.chunk.js.map",
-    "551.cadb8ca9.chunk.css.map": "/contacts/static/css/551.cadb8ca9.chunk.css.map",
+    "551.0cdfdcc2.chunk.css.map": "/contacts/static/css/551.0cdfdcc2.chunk.css.map",
     "551.57fa3613.chunk.js.map": "/contacts/static/js/551.57fa3613.chunk.js.map",
     "164.6fb95108.chunk.js.map": "/contacts/static/js/164.6fb95108.chunk.js.map",
     "160.87a50221.chunk.js.map": "/contacts/static/js/160.87a50221.chunk.js.map",
     "948.5bf864af.chunk.js.map": "/contacts/static/js/948.5bf864af.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.fd7cd3d2.js"
+    "static/js/main.602c58ff.js"
   ]
 }
