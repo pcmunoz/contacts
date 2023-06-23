@@ -31,7 +31,7 @@ module.exports = function (config, env) {
     )
   );
   // config.optimization.minimize = false;
-  config.output.publicPath = "auto";
+  config.output.publicPath = "";
   return Object.assign(
     config,
     override(
