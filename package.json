@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@craco/craco": "7.0.0",
-    "@craco/types": "7.0.0",
+    "@craco/craco": "7.1.0",
+    "@craco/types": "7.1.0",
     "@types/lodash": "^4.14.195",
     "@types/node": "20.3.1",
     "@types/react": "18.2.0",

@@ -3,7 +3,7 @@ const { dependencies } = require('./package.json');
 module.exports = {
   name: 'contacts',
   exposes: {
-    './Contacts': './src/index.ts',
+    './Contacts': './src/component/Contact',
   },
   filename: 'remoteEntry.js',
   shared: {

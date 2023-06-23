@@ -1,3 +1,3 @@
-import("./bootstrap");
+const bootstrap = import("./bootstrap");
 
-export const dummy = "to fix isolatedModules issue";
+export default bootstrap
